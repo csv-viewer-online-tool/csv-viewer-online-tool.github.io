@@ -47,6 +47,7 @@ class TableCsv {
   
   const tableRoot = document.querySelector("#csvRoot");
   const csvFileInput = document.querySelector("#csvFileInput");
+  const title = document.querySelector("#title");
   const tableCsv = new TableCsv(tableRoot);
   
   csvFileInput.addEventListener("change", (e) => {
@@ -56,6 +57,7 @@ class TableCsv {
       complete: (results) => {
         tableCsv.update(results.data.slice(1), results.data[0]);
         csvFileInput.classList.add("hidden")
+        title.classList.add("hidden")
       }
     });
   });
